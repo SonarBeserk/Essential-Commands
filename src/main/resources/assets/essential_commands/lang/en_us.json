@@ -54,6 +54,7 @@
   "cmd.workbench.container_ui_name": "EC Workbench",
   "cmd.list.feedback.empty": "No locations found.",
   "cmd.top.location_name": "world surface",
+  "cmd.rules.header": "--- Rules ---\n",
 
   "teleport.error.interdimensional_teleport_disabled": "Teleport failed. Reason: Interdimensional teleportation disabled.",
   "teleport.queued.1": "Teleporting to ",

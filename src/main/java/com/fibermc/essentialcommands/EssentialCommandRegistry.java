@@ -335,6 +335,16 @@ public class EssentialCommandRegistry {
                     essentialCommandsRootNode.addChild(topNode);
                 }
 
+                if (CONFIG.ENABLE_RULES.getValue()) {
+                    LiteralCommandNode<ServerCommandSource> rulesNode = dispatcher.register(
+                            CommandManager.literal("rules")
+                                    .requires(ECPerms.require(ECPerms.Registry.rules, 2))
+                                    .executes(new RulesCommand())
+                    );
+
+                    essentialCommandsRootNode.addChild(rulesNode);
+                }
+
                 LiteralCommandNode<ServerCommandSource> configNode = CommandManager.literal("config")
                         .requires(ECPerms.requireAny(ECPerms.Registry.Group.config_group, 4))
                         .then(CommandManager.literal("reload")
